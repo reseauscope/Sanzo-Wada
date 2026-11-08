@@ -1,0 +1,22 @@
+{
+  "source_version": "1.3.0",
+  "copied_at_utc": "2026-11-08T19:53:31.055851+00:00",
+  "upstream_commit": "d44d2b5a18cf595aa536676a5cf67046a6b503f6",
+  "sha256": {
+    "data/colors.json": "555f11c32eb8133078fd470dd7d5320533aaa8b636f12fa06a8dd3d0ee2703b4",
+    "data/combinations.json": "db814899b416ed3b016485c06eb832ed6eaf46a61e6de3decd935ecdeb85655a",
+    "data/manifest.json": "4a3909f3f4d713f94c19a84d0d0fd52999461ea821e6b8706d7c979db3684440",
+    "data/LICENSE.md": "4609449ccba0183743521db542c67a16e112e7f0043ee2d6ed2040c339e5dd72",
+    "data/clean/colors.json": "4cc2e7533a42b6c1d2d39b59dd914d1e03bc8b707dd9deb9d184668fc987ef93",
+    "data/clean/combinations.json": "59e541860f7b10e30ecba9f3b16a5f46fdf7ef6f30d54f8044d7b3f1bf80b153",
+    "data/clean/cleaning.json": "dd24e34cc0716ec74414a5715c2d0230951463c5ba5fb4245c88fe17bf97460e",
+    "dataset/colors.json": "555f11c32eb8133078fd470dd7d5320533aaa8b636f12fa06a8dd3d0ee2703b4",
+    "dataset/combinations.json": "db814899b416ed3b016485c06eb832ed6eaf46a61e6de3decd935ecdeb85655a",
+    "dataset/manifest.json": "4a3909f3f4d713f94c19a84d0d0fd52999461ea821e6b8706d7c979db3684440",
+    "dataset/LICENSE.md": "4609449ccba0183743521db542c67a16e112e7f0043ee2d6ed2040c339e5dd72",
+    "dataset/clean/colors.json": "4cc2e7533a42b6c1d2d39b59dd914d1e03bc8b707dd9deb9d184668fc987ef93",
+    "dataset/clean/combinations.json": "59e541860f7b10e30ecba9f3b16a5f46fdf7ef6f30d54f8044d7b3f1bf80b153",
+    "dataset/clean/cleaning.json": "dd24e34cc0716ec74414a5715c2d0230951463c5ba5fb4245c88fe17bf97460e",
+    "wada.py": "869ec648fa3baf32ff7342d68b71601cfd44bc87691c7261b9a335aa5ad59a5d"
+  }
+}

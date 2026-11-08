@@ -1,0 +1,41 @@
+{
+  "fichier": "colors.json",
+  "source": "https://github.com/mattdesl/dictionary-of-colour-combinations",
+  "version_amont": "1.0.2 (package.json)",
+  "commit_amont": "d44d2b5a18cf595aa536676a5cf67046a6b503f6",
+  "url_fichier_au_commit": "https://raw.githubusercontent.com/mattdesl/dictionary-of-colour-combinations/d44d2b5a18cf595aa536676a5cf67046a6b503f6/colors.json",
+  "origine_des_donnees": "https://github.com/dblodorn/sanzo-wada (Dain M. Blodorn Kim), corrigé par Matt DesLauriers",
+  "edition_de_reference": "Sanzo Wada, A Dictionary of Color Combinations, Seigensha Art Publishing, 2010, ISBN 978-4-86152-247-5 (348 combinaisons). Édition originale japonaise Haishoku Sōkan, 1933-1934, selon le README amont ; non vérifiée sur source primaire.",
+  "recupere_le": "2026-11-04",
+  "sha256": "555f11c32eb8133078fd470dd7d5320533aaa8b636f12fa06a8dd3d0ee2703b4",
+  "licence": "MIT (voir LICENSE.md)",
+  "modifications_locales": "aucune : colors.json est identique au fichier amont",
+  "fidelite": "Les valeurs CMYK sont celles du jeu de données, transcrites d'après le livre puis corrigées par un tiers. Aucune comparaison avec le livre papier n'a encore été faite dans ce skill.",
+  "anomalies_connues": [
+    {
+      "couleur": "Dull Violet Black",
+      "type": "valeur",
+      "champ": "cmyk",
+      "valeur": [95, 106, 38, 50],
+      "constat": "CMYK [95, 106, 38, 50] : le magenta vaut 106, hors de l'intervalle 0-100. Valeur laissée telle quelle dans la source amont, non corrigée ici, à vérifier dans le livre papier. Les valeurs rgb, hex et lab de cette couleur en sont dérivées. Ne pas présenter ces valeurs comme sûres."
+    },
+    {
+      "couleur": "Calamine BLue",
+      "type": "nom",
+      "champ": "name",
+      "constat": "Faute de frappe probable dans la source (« BLue » pour « Blue »). Nom conservé tel quel pour ne pas altérer le fichier amont ; citer le nom tel qu'il figure dans les données et signaler la faute probable si la question porte sur le nom."
+    },
+    {
+      "couleur": "Cerulian Blue",
+      "type": "nom",
+      "champ": "name",
+      "constat": "Orthographe inhabituelle (« Cerulian » pour « Cerulean »). Peut venir du livre lui-même ou de la transcription : non tranché. Nom conservé tel quel ; citer le nom tel qu'il figure dans les données."
+    },
+    {
+      "couleur": "Antwarp Blue",
+      "type": "nom",
+      "champ": "name",
+      "constat": "Orthographe inhabituelle (« Antwarp » pour « Antwerp »). Peut venir du livre lui-même ou de la transcription : non tranché. Nom conservé tel quel ; citer le nom tel qu'il figure dans les données."
+    }
+  ]
+}

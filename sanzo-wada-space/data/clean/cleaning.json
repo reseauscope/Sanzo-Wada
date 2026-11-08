@@ -1,0 +1,433 @@
+{
+  "schema_version": 1,
+  "clean_version": "1.3.0",
+  "decision_date": "2026-11-08",
+  "source_sha256": {
+    "colors.json": "555f11c32eb8133078fd470dd7d5320533aaa8b636f12fa06a8dd3d0ee2703b4",
+    "combinations.json": "db814899b416ed3b016485c06eb832ed6eaf46a61e6de3decd935ecdeb85655a",
+    "manifest.json": "4a3909f3f4d713f94c19a84d0d0fd52999461ea821e6b8706d7c979db3684440"
+  },
+  "output_sha256": {
+    "colors.json": "4cc2e7533a42b6c1d2d39b59dd914d1e03bc8b707dd9deb9d184668fc987ef93",
+    "combinations.json": "59e541860f7b10e30ecba9f3b16a5f46fdf7ef6f30d54f8044d7b3f1bf80b153"
+  },
+  "uppercase_hex_count": 0,
+  "corrections": [
+    {
+      "source_index": 115,
+      "source_name": "Calamine BLue",
+      "reason": "Correction du nom décidée par Jean le 2026-11-08.",
+      "certainty": "certaine : correction typographique décidée par Jean",
+      "changes": [
+        {
+          "pointer": "/115/name",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Calamine BLue",
+          "after": "Calamine Blue",
+          "file": "colors.json"
+        },
+        {
+          "pointer": "/115/name_source",
+          "operation": "add",
+          "before_present": false,
+          "after": "Calamine BLue",
+          "file": "colors.json"
+        },
+        {
+          "pointer": "/combinations/19/colors/0",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Calamine BLue",
+          "after": "Calamine Blue",
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/40/colors/1",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Calamine BLue",
+          "after": "Calamine Blue",
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/64/colors/1",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Calamine BLue",
+          "after": "Calamine Blue",
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/158/colors/1",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Calamine BLue",
+          "after": "Calamine Blue",
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/175/colors/2",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Calamine BLue",
+          "after": "Calamine Blue",
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/254/colors/2",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Calamine BLue",
+          "after": "Calamine Blue",
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/260/colors/2",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Calamine BLue",
+          "after": "Calamine Blue",
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/286/colors/3",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Calamine BLue",
+          "after": "Calamine Blue",
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/290/colors/3",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Calamine BLue",
+          "after": "Calamine Blue",
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/299/colors/3",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Calamine BLue",
+          "after": "Calamine Blue",
+          "file": "combinations.json"
+        }
+      ]
+    },
+    {
+      "source_index": 117,
+      "source_name": "Cerulian Blue",
+      "reason": "Correction du nom décidée par Jean le 2026-11-08.",
+      "certainty": "décision de Jean ; fidélité au livre non vérifiée",
+      "changes": [
+        {
+          "pointer": "/117/name",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Cerulian Blue",
+          "after": "Cerulean Blue",
+          "file": "colors.json"
+        },
+        {
+          "pointer": "/117/name_source",
+          "operation": "add",
+          "before_present": false,
+          "after": "Cerulian Blue",
+          "file": "colors.json"
+        },
+        {
+          "pointer": "/combinations/0/colors/1",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Cerulian Blue",
+          "after": "Cerulean Blue",
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/62/colors/1",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Cerulian Blue",
+          "after": "Cerulean Blue",
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/98/colors/1",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Cerulian Blue",
+          "after": "Cerulean Blue",
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/124/colors/1",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Cerulian Blue",
+          "after": "Cerulean Blue",
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/147/colors/2",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Cerulian Blue",
+          "after": "Cerulean Blue",
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/226/colors/2",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Cerulian Blue",
+          "after": "Cerulean Blue",
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/239/colors/2",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Cerulian Blue",
+          "after": "Cerulean Blue",
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/263/colors/3",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Cerulian Blue",
+          "after": "Cerulean Blue",
+          "file": "combinations.json"
+        }
+      ]
+    },
+    {
+      "source_index": 122,
+      "source_name": "Antwarp Blue",
+      "reason": "Correction du nom décidée par Jean le 2026-11-08.",
+      "certainty": "décision de Jean ; fidélité au livre non vérifiée",
+      "changes": [
+        {
+          "pointer": "/122/name",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Antwarp Blue",
+          "after": "Antwerp Blue",
+          "file": "colors.json"
+        },
+        {
+          "pointer": "/122/name_source",
+          "operation": "add",
+          "before_present": false,
+          "after": "Antwarp Blue",
+          "file": "colors.json"
+        },
+        {
+          "pointer": "/combinations/84/colors/1",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Antwarp Blue",
+          "after": "Antwerp Blue",
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/105/colors/0",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Antwarp Blue",
+          "after": "Antwerp Blue",
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/113/colors/1",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Antwarp Blue",
+          "after": "Antwerp Blue",
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/139/colors/1",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Antwarp Blue",
+          "after": "Antwerp Blue",
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/162/colors/2",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Antwarp Blue",
+          "after": "Antwerp Blue",
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/171/colors/1",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Antwarp Blue",
+          "after": "Antwerp Blue",
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/207/colors/2",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Antwarp Blue",
+          "after": "Antwerp Blue",
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/243/colors/3",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Antwarp Blue",
+          "after": "Antwerp Blue",
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/257/colors/3",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Antwarp Blue",
+          "after": "Antwerp Blue",
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/280/colors/3",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Antwarp Blue",
+          "after": "Antwerp Blue",
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/298/colors/3",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Antwarp Blue",
+          "after": "Antwerp Blue",
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/301/colors/3",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Antwarp Blue",
+          "after": "Antwerp Blue",
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/333/colors/3",
+          "operation": "replace",
+          "before_present": true,
+          "before": "Antwarp Blue",
+          "after": "Antwerp Blue",
+          "file": "combinations.json"
+        }
+      ]
+    },
+    {
+      "source_index": 130,
+      "source_name": "Dull Violet Black",
+      "reason": "Magenta 106 ramené à la borne 100 sur décision de Jean le 2026-11-08 ; dérivés conservés sans recalcul.",
+      "certainty": "hypothèse de correction de borne, non vérifiée contre le livre papier",
+      "changes": [
+        {
+          "pointer": "/130/cmyk/1",
+          "operation": "replace",
+          "before_present": true,
+          "before": 106,
+          "after": 100,
+          "file": "colors.json"
+        },
+        {
+          "pointer": "/130/cmyk_source",
+          "operation": "add",
+          "before_present": false,
+          "after": [
+            95,
+            106,
+            38,
+            50
+          ],
+          "file": "colors.json"
+        },
+        {
+          "pointer": "/130/derived_values_status",
+          "operation": "add",
+          "before_present": false,
+          "after": "source_before_cmyk_correction",
+          "file": "colors.json"
+        },
+        {
+          "pointer": "/combinations/94/cmyk/1/1",
+          "operation": "replace",
+          "before_present": true,
+          "before": 106,
+          "after": 100,
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/105/cmyk/1/1",
+          "operation": "replace",
+          "before_present": true,
+          "before": 106,
+          "after": 100,
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/144/cmyk/2/1",
+          "operation": "replace",
+          "before_present": true,
+          "before": 106,
+          "after": 100,
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/264/cmyk/3/1",
+          "operation": "replace",
+          "before_present": true,
+          "before": 106,
+          "after": 100,
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/276/cmyk/3/1",
+          "operation": "replace",
+          "before_present": true,
+          "before": 106,
+          "after": 100,
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/288/cmyk/3/1",
+          "operation": "replace",
+          "before_present": true,
+          "before": 106,
+          "after": 100,
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/294/cmyk/3/1",
+          "operation": "replace",
+          "before_present": true,
+          "before": 106,
+          "after": 100,
+          "file": "combinations.json"
+        },
+        {
+          "pointer": "/combinations/330/cmyk/1/1",
+          "operation": "replace",
+          "before_present": true,
+          "before": 106,
+          "after": 100,
+          "file": "combinations.json"
+        }
+      ]
+    }
+  ]
+}
