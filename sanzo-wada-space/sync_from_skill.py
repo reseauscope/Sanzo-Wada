@@ -1,4 +1,5 @@
 """Copie locale contrôlée des jeux brut et nettoyé vers la Space et le dataset."""
+import base64
 import argparse
 import datetime
 import hashlib
@@ -111,6 +112,17 @@ def synchronize(skill, space, dataset, check=False, upgrade=False):
     for path, blob in mapping.items():
         if path.read_bytes() != blob:
             raise ValueError("Copie divergente après synchronisation : %s" % path)
+    # Exact bytes, encoded for script loading under file:// as well as HTTPS.
+    payload = {"receipt": json.loads(receipt.read_text(encoding="utf-8")),
+               "files": {keys[p]: base64.b64encode(blob).decode("ascii")
+                         for p, blob in mapping.items() if space in p.parents}}
+    bundle = ("globalThis.WADA_SNAPSHOT = " + json.dumps(payload, ensure_ascii=True, separators=(",", ":")) + ";\n").encode("utf-8")
+    target = space / "snapshot.js"
+    if check:
+        if not target.exists() or target.read_bytes() != bundle:
+            raise ValueError("snapshot.js divergent : relancer la synchronisation.")
+    elif not target.exists() or target.read_bytes() != bundle:
+        atomic(target, bundle)
     return {"status": "OK", "mode": "check" if check else "upgrade" if upgrade else "sync",
             "source_version": VERSION, "raw_colors_sha256": EXPECTED,
             "clean_colors_sha256": digest(clean["colors.json"]), "files_checked": len(mapping)}

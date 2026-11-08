@@ -6,8 +6,8 @@ Trois dossiers, un seul contenu :
 
 | Dossier | Rôle |
 |---|---|
-| [`Sanzo-Wada/`](Sanzo-Wada/) | Le **skill** : données brutes et copie nettoyée, scripts Python 3.8+ sans dépendance (recherche, suggestion, contraste, contrôle d'intégrité), tests, règles pour agents IA (`SKILL.md`, lu par Claude, Codex, Antigravity). |
-| [`sanzo-wada-space/`](sanzo-wada-space/) | L'**aperçu visuel** : application Gradio publiée sur Hugging Face, Space [`AUGERAUD/sanzo-wada`](https://huggingface.co/spaces/AUGERAUD/sanzo-wada). |
+| [`Sanzo-Wada/`](Sanzo-Wada/) | Le **skill** : données brutes et copie nettoyée, scripts Python 3.8+ sans dépendance (recherche, suggestion, contraste, contrôle d'intégrité), tests, règles pour agents IA (`SKILL.md`, lu par Claude, Codex, Antigravity), et une interface Windows locale (`Application/`, Tkinter). |
+| [`sanzo-wada-space/`](sanzo-wada-space/) | L'**aperçu visuel** : page statique HTML/JS sans dépendance, vérification SHA-256 des données côté client, publiée sur Hugging Face, Space [`AUGERAUD/sanzo-wada`](https://huggingface.co/spaces/AUGERAUD/sanzo-wada). S'ouvre aussi hors ligne (`index.html`). |
 | [`sanzo-wada-dictionary/`](sanzo-wada-dictionary/) | Le **dataset** : brut et nettoyé avec journal, publié sur Hugging Face, [`AUGERAUD/sanzo-wada-dictionary`](https://huggingface.co/datasets/AUGERAUD/sanzo-wada-dictionary). |
 
 Ce dépôt est la source : les deux dossiers Hugging Face en sont des copies contrôlées par empreinte (`sanzo-wada-space/sync_from_skill.py`).

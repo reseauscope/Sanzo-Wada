@@ -30,7 +30,7 @@ configs:
 
 # Sanzo Wada : jeux brut et nettoyé 1.3.0
 
-159 couleurs et 348 combinaisons dans chaque jeu : 120 duos, 120 trios, 108 quatuors. Même ordre, mêmes chapitres et mêmes appartenances. La configuration par défaut est `clean_colors`. Publié le 8 novembre 2026 ; les fichiers sont produits et contrôlés par le skill `Sanzo-Wada` (dépôt GitHub `sanzo-wada`).
+159 couleurs et 348 combinaisons dans chaque jeu : 120 duos, 120 trios, 108 quatuors. Même ordre, mêmes chapitres et mêmes appartenances. La configuration par défaut est `clean_colors`. Publié le 8 novembre 2026 ; les fichiers sont produits et contrôlés par le skill `Sanzo-Wada` (dépôt GitHub `reseauscope/Sanzo-Wada`).
 
 ## Deux jeux distincts
 
@@ -115,7 +115,7 @@ raw_colors = json.loads(Path("colors.json").read_text(encoding="utf-8"))
 journal = json.loads(Path("clean/cleaning.json").read_text(encoding="utf-8"))
 ```
 
-Le YAML déclare quatre configurations distinctes. Dépôt public : `AUGERAUD/sanzo-wada-dictionary`. Le skill qui produit ces fichiers (scripts, tests, journal de nettoyage, règles pour agents IA) est publié sur GitHub dans le dépôt `sanzo-wada`, dossier `Sanzo-Wada/` ; l'aperçu visuel est la Space `AUGERAUD/sanzo-wada`.
+Le YAML déclare quatre configurations distinctes. Dépôt public : `AUGERAUD/sanzo-wada-dictionary`. Le skill qui produit ces fichiers (scripts, tests, journal de nettoyage, règles pour agents IA) est publié sur GitHub dans le dépôt `reseauscope/Sanzo-Wada` (https://github.com/reseauscope/Sanzo-Wada), dossier `Sanzo-Wada/` ; l'aperçu visuel est la Space statique `AUGERAUD/sanzo-wada`.
 
 ## Licence et limites
 

@@ -3,20 +3,18 @@ title: Sanzo Wada, 348 combinaisons
 emoji: 🎨
 colorFrom: gray
 colorTo: gray
-sdk: gradio
-sdk_version: 6.31.0
-python_version: "3.11"
-app_file: app.py
+sdk: static
+app_file: index.html
 license: mit
 ---
 
 # Sanzo Wada : copie nettoyée 1.3.0
 
-159 couleurs, 348 combinaisons. Quatre onglets : combinaison par numéro, couleur par nom, trois voisins d'un HEX, grille filtrable par taille et chapitre. Les aplats ont la même largeur, les combinaisons suivent l'ordre du livre, sans classement de pertinence. Le filtre chapitre retient les combinaisons contenant au moins une couleur du chapitre choisi. La règle CSS de repli des onglets sur mobile est conservée.
+159 couleurs, 348 combinaisons. Quatre vues : combinaison par numéro, couleur par nom, trois voisins d'un HEX, grille filtrable par taille et chapitre. Les aplats ont la même largeur, les combinaisons suivent l'ordre du livre, sans classement de pertinence. Le filtre chapitre retient les combinaisons contenant au moins une couleur du chapitre choisi. Les liens des quatre vues se replient sur mobile et restent accessibles au clavier.
 
 ## Copie consultée et corrections
 
-L'application lit explicitement `data/clean/colors.json`, avec le module `wada.py` 1.3.0 copié sans changement. Elle ne lit jamais directement le dossier du skill. Les fichiers bruts embarqués servent à la provenance et aux contrôles de synchronisation.
+L'application lit explicitement `data/clean/colors.json`, avec une colorimétrie JavaScript comparée au module `wada.py` 1.3.0 copié sans changement. Elle ne lit jamais directement le dossier du skill. Les fichiers bruts embarqués servent à la provenance et aux contrôles de synchronisation.
 
 | Nom brut | Nom affiché |
 |---|---|
@@ -44,7 +42,7 @@ La proximité emploie CIEDE2000 et fournit CIE76 pour comparaison. Le HEX saisi 
 
 - `data/colors.json`, `data/combinations.json`, `data/manifest.json`, `data/LICENSE.md` : brut et provenance inchangés.
 - `data/clean/colors.json`, `data/clean/combinations.json`, `data/clean/cleaning.json` : nettoyé et journal copiés sans régénération.
-- `wada.py` : module du skill, identique octet pour octet. Seule sa variable `DATA` est fixée dans app.py au dossier embarqué.
+- `wada.py` : module du skill, identique octet pour octet. Il sert de référence aux vecteurs de test Python ; il ne s’exécute pas dans le navigateur.
 - `sync-receipt.json` : date, version source, commit amont et empreintes des copies Space et dataset.
 
 ## Synchronisation locale
@@ -63,6 +61,12 @@ Les options `--skill-dir` et `--dataset-dir` fixent les chemins locaux. Le datas
 
 ## Lancement
 
-Avec les dépendances déjà disponibles localement et Python 3.11 de préférence, lancer `python -B app.py`. La dépendance reste `gradio==6.31.0`. Aucun tunnel de partage Gradio n'est activé : la Space est servie par Hugging Face.
+Ouvrir `index.html` directement dans un navigateur récent, ou servir ce dossier avec `python -m http.server`. Aucun serveur applicatif, dépendance, CDN, police web ni requête sortante.
 
-Les données sont sous licence MIT, copie dans `data/LICENSE.md`. Les fichiers de l'application sont également proposés sous licence MIT. Dépôts publics : Space `AUGERAUD/sanzo-wada`, dataset `AUGERAUD/sanzo-wada-dictionary`, code source sur GitHub (dépôt `sanzo-wada`, dossier `Sanzo-Wada/` pour le skill, `sanzo-wada-space/` pour cette application).
+`sync_from_skill.py` génère aussi `snapshot.js`, contenant les octets exacts des huit fichiers embarqués, encodés en base64, et le reçu. Le navigateur vérifie leurs SHA-256 par Web Crypto avant d'afficher les données. Les JSON affichés sont décodés uniquement depuis ces octets vérifiés. Ce choix permet `file://` sans les restrictions de `fetch`. Le mode `--check` vérifie aussi ce fichier généré. Le reçu assure la cohérence locale, pas une signature indépendante contre un remplacement simultané de toutes les données et du reçu.
+
+La vérification échouée masque toute l'application et laisse seulement un message d'erreur. Si Web Crypto est indisponible, un message demande un navigateur récent et un contexte fichier local ou HTTPS.
+
+Tests sans dépendance : `python -B tests/make_vectors.py`, `node tests/test_color.js`, `node tests/test_snapshot.js`. Les vecteurs couvrent les 159 HEX du dictionnaire et 22 entrées supplémentaires, trois voisins et deux écarts par entrée. Les avertissements sont comparés mot pour mot au module Python. Après un changement du module, régénérer aussi `texts.js` depuis ses avertissements avant revue.
+
+Les données sont sous licence MIT, copie dans `data/LICENSE.md`. Les fichiers de l'application sont également proposés sous licence MIT. Dépôts publics : Space `AUGERAUD/sanzo-wada`, dataset `AUGERAUD/sanzo-wada-dictionary`, code source sur GitHub (dépôt `reseauscope/Sanzo-Wada`, https://github.com/reseauscope/Sanzo-Wada : dossier `Sanzo-Wada/` pour le skill, `sanzo-wada-space/` pour cette application).

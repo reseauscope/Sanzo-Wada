@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sanzo Wada : 348 combinaisons</title>
+<link rel="stylesheet" href="styles.css?v=1">
+<script src="snapshot.js" defer></script>
+<script src="texts.js" defer></script>
+<script src="color.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body class="page">
+<p id="status" class="status" role="status">Vérification des données…</p>
+<div id="application" hidden>
+<header class="intro"><h1>Sanzo Wada</h1><p>Copie nettoyée 1.3.0. 159 couleurs, 348 combinaisons.</p><p id="order"></p><p>Trois noms corrigés et magenta de Dull Violet Black ramené à 100 par hypothèse non vérifiée contre le livre papier. Ses RGB, HEX et Lab source sont conservés sans recalcul.</p></header>
+<nav class="navigation" aria-label="Vues"><a href="#combinaison">Combinaison par numéro</a><a href="#couleur">Couleur par nom</a><a href="#hex">Plus proche d'un HEX</a><a href="#toutes">Les 348</a></nav>
+<main class="main">
+<section id="combinaison" class="view"><h2>Combinaison par numéro</h2><form id="combo-form"><label for="number">Numéro de combinaison</label><input id="number" type="number" min="1" max="348" step="1" value="198" required><button>Afficher</button></form><div id="combo-result" aria-live="polite"></div></section>
+<section id="couleur" class="view"><h2>Couleur par nom</h2><label for="name">Nom dans les données</label><select id="name"></select><div id="color-result" aria-live="polite"></div></section>
+<section id="hex" class="view"><h2>Plus proche d'un HEX</h2><form id="hex-form"><label for="code">Code HEX à six chiffres</label><input id="code" value="#00978d" maxlength="7" required><button>Comparer</button></form><div id="nearest-result" aria-live="polite"></div></section>
+<section id="toutes" class="view"><h2>Les 348</h2><div class="filters"><div><label for="size">Nombre de couleurs</label><select id="size"><option>Toutes</option><option>2</option><option>3</option><option>4</option></select></div><div><label for="chapter">Chapitre 1 à 6 (base 0 dans les données)</label><select id="chapter"><option>Tous</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></div></div><p>Filtre chapitre : au moins une couleur de la combinaison appartient au chapitre choisi.</p><div id="gallery-result" aria-live="polite"></div></section>
+</main><footer id="provenance" class="provenance"></footer>
+</div><noscript>JavaScript est nécessaire pour vérifier les données et explorer les combinaisons.</noscript>
+</body></html>

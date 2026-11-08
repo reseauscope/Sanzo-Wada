@@ -25,7 +25,7 @@ Ce qu'il fournit : des accords de couleurs documentés et outillés. Ce qu'il ne
 | `tests/test_wada.py`, `tests/test_commands.py`, `tests/test_clean.py` | Tests de non-régression, commandes, nettoyage et mutations (unittest). |
 | `Application/` | Interface Windows locale (Tkinter, hors ligne) sur les mêmes scripts et données : lanceur `Sanzo-Wada.exe` (source `Lanceur.cs`, 5 Ko), `application.py`. Voir `Application/LISEZ-MOI.txt`. |
 | `CHANGELOG.md` | Historique des versions du skill. |
-| `../sanzo-wada-space/`, `../sanzo-wada-dictionary/` | Outils annexes, hors du skill : aperçu visuel Gradio et dataset préparé pour Hugging Face (dépôts publics Hugging Face `AUGERAUD/sanzo-wada` et `AUGERAUD/sanzo-wada-dictionary` ; code source sur GitHub, dépôt `sanzo-wada`). Copies contrôlées par `sync_from_skill.py`. |
+| `../sanzo-wada-space/`, `../sanzo-wada-dictionary/` | Outils annexes, hors du skill : aperçu visuel Gradio et dataset préparé pour Hugging Face (dépôts publics Hugging Face `AUGERAUD/sanzo-wada` et `AUGERAUD/sanzo-wada-dictionary` ; code source sur GitHub, dépôt `reseauscope/Sanzo-Wada`, https://github.com/reseauscope/Sanzo-Wada). Copies contrôlées par `sync_from_skill.py`. |
 
 ## Prise en main
 
