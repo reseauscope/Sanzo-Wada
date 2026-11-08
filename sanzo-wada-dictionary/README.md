@@ -30,7 +30,7 @@ configs:
 
 # Sanzo Wada : jeux brut et nettoyé 1.3.0
 
-159 couleurs et 348 combinaisons dans chaque jeu : 120 duos, 120 trios, 108 quatuors. Même ordre, mêmes chapitres et mêmes appartenances. La configuration par défaut est `clean_colors`. Préparation exclusivement locale, aucune publication effectuée.
+159 couleurs et 348 combinaisons dans chaque jeu : 120 duos, 120 trios, 108 quatuors. Même ordre, mêmes chapitres et mêmes appartenances. La configuration par défaut est `clean_colors`. Publié le 8 novembre 2026 ; les fichiers sont produits et contrôlés par le skill `Sanzo-Wada` (dépôt GitHub `sanzo-wada`).
 
 ## Deux jeux distincts
 
