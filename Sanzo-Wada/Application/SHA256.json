@@ -1,0 +1,30 @@
+[
+  {
+    "file": "application.py",
+    "sha256": "1cea14720b2d0c093349b668ddfb53ee8d2fa4e1d982c2d81626738367dc3c02"
+  },
+  {
+    "file": "demarrer.pyw",
+    "sha256": "166afecaa652306239c1a05a7d2a870d54f5e491c9b5f11c6f4953d41ec4da4d"
+  },
+  {
+    "file": "Lanceur.cs",
+    "sha256": "e811d0352fcfd4df61fd6e3891174667d58c5be0c8af761ed34729dcfd07fb7d"
+  },
+  {
+    "file": "LISEZ-MOI.txt",
+    "sha256": "999a871b198d3b6dae03fb466eef146fe090ed73792f58863dbcf451f1c009b4"
+  },
+  {
+    "file": "python-local.txt",
+    "sha256": "5fbada3412e3abb20beecac01b7c516eb58df80883e286acf4f6b50979e8c1e6"
+  },
+  {
+    "file": "Sanzo-Wada.exe",
+    "sha256": "9b9e715518816782bad5df355c0c6b73b557b0c4b1c617aeca7b3f99d51e17fc"
+  },
+  {
+    "file": "VERIFICATIONS.json",
+    "sha256": "3e4ac189a65f3ec43f5888c93854300b50390c5929734d6d3fa0201b813e1ab3"
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "application": "Sanzo-Wada.exe",
+  "date": "2026-11-08",
+  "format": "Lanceur Windows .NET Framework, interface Python/Tkinter locale",
+  "launcher_exit_code": 0,
+  "observed_window_title": "Sanzo Wada | Couleurs et combinaisons",
+  "checks": {
+    "six_tabs": "OK",
+    "159_colors_348_combinations": "OK",
+    "old_color_names": "OK",
+    "Benzol_Green_exact": "OK",
+    "black_white_contrast_21": "OK",
+    "Dull_Violet_Black_warning": "OK",
+    "gallery_108_quartets": "OK",
+    "raw_clean_switch": "OK",
+    "clipboard_hex": "OK",
+    "python38_syntax": "OK",
+    "verify_source": "code 0"
+  },
+  "network_used": false,
+  "python_required": "Python local avec Tkinter, chemin dans python-local.txt",
+  "standalone_python_embedded": false
+}

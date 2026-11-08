@@ -2,6 +2,8 @@
 
 ## 1.3.0, 2026-11-08 (Codex, choix arbitrés par Jean après relecture Claude)
 
+- 2026-11-08 22h : dossier `Application/`, interface Windows locale Tkinter sur les scripts et données existants, lanceur `.exe` de 5 Ko avec sa source C# et son empreinte ; aucune modification des scripts, des données ni de la version.
+
 - Changement de comportement : consultation de `data/clean/` par défaut ; `--data-source raw` pour le brut. Aucun repli implicite. Les anciens noms restent trouvables via `name_source`.
 - Quatre corrections : Calamine Blue, Cerulean Blue, Antwerp Blue et CMYK [95, 100, 38, 50] pour Dull Violet Black. Cette dernière correction reste une hypothèse non vérifiée contre le livre papier.
 - RGB, HEX et Lab de Dull Violet Black conservés sans recalcul. `cmyk_source` et `derived_values_status` explicitent la discordance. Cette couleur reste dans nearest et contrast, avec avertissement dans les sorties complètes et courtes.

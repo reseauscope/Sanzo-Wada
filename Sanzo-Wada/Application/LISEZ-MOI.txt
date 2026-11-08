@@ -1,0 +1,21 @@
+SANZO WADA : APPLICATION WINDOWS LOCALE
+
+Double-cliquer sur Sanzo-Wada.exe.
+
+Le lanceur EXE démarre une interface Windows sans console, avec le Python et Tkinter déjà installés sur ce PC. Il ne contient pas un Python autonome. Aucun réseau, aucun compte et aucune installation supplémentaire.
+
+Fonctions : combinaison par numéro, recherche de couleur et anciens noms, proximité HEX, suggestions, galerie des 348 combinaisons avec filtres et pagination, calcul du contraste, copie du HEX et export JSON choisi par l'utilisateur.
+
+La copie nettoyée est sélectionnée par défaut. Le menu en haut à droite permet de consulter le brut. Les avertissements sur les données restent affichés, notamment pour Dull Violet Black.
+
+Conserver ce dossier Application avec les dossiers ../scripts et ../data du skill : il utilise les scripts et les données existants, sans les modifier.
+
+Avant le premier lancement : copier python-local.exemple.txt en python-local.txt et y mettre le chemin complet de votre pythonw.exe (Python 3.8 ou plus, avec Tkinter). Ce fichier est une configuration locale propre à chaque poste, il n'est pas versionné. Le lanceur ne télécharge rien.
+
+Vérifier ou recompiler le lanceur : SHA-256 de Sanzo-Wada.exe dans SHA256.json. Pour le reconstruire depuis Lanceur.cs avec le compilateur présent sur Windows :
+  C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe /nologo /target:winexe /out:Sanzo-Wada.exe Lanceur.cs
+L'exécutable n'est pas signé : Windows SmartScreen peut demander une confirmation au premier lancement.
+
+Sources : application.py (interface), demarrer.pyw (entrée Python), Lanceur.cs (source du lanceur EXE). Le lanceur est compilé avec le compilateur .NET Framework déjà présent sur Windows.
+
+HEX : approximation d'écran. CMYK transcrit d'après le livre, non vérifié contre le papier. Aucun nuancier commercial. Les accords ne portent aucun classement de pertinence ou usage attribué à Wada.
