@@ -10,9 +10,17 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import wada
 
-BG = "#f5f3ed"
-INK = "#253339"
-MUTED = "#526269"
+# Combinaison 127, couleurs d'écran exactes du jeu de données.
+# Pistachio Green domine l'interface sur choix de l'utilisateur.
+# Les rôles et proportions d'interface sont nos choix, pas des prescriptions de Wada.
+CINNAMON_BUFF = "#fdc57e"
+PISTACHIO_GREEN = "#648f7b"
+DARK_SOFT_VIOLET = "#66629c"
+BG = PISTACHIO_GREEN
+SURFACE = "#fffdf7"
+INK = "#0b1518"
+MUTED = INK
+LIGHT_TEXT = "#ffffff"
 PROVENANCE = ("CMYK du jeu de données transcrit d'après le livre, non vérifié contre le papier. "
               "HEX : approximation d'écran. Aucun nuancier commercial. Tester les couleurs sur le support réel.")
 
@@ -65,34 +73,76 @@ class Application(tk.Tk):
         self.geometry("1180x820")
         self.minsize(820, 600)
         self.configure(background=BG)
-        self.option_add("*Font", "{Segoe UI} 10")
+        self.option_add("*Font", "{Segoe UI} 12")
         style = ttk.Style(self)
         style.theme_use("clam")
-        style.configure(".", background=BG, foreground=INK, font=("Segoe UI", 10))
+        style.configure(".", background=BG, foreground=INK, font=("Segoe UI", 12))
         style.configure("TFrame", background=BG)
+        style.configure("TLabel", background=BG, foreground=INK)
+        style.configure("Card.TFrame", background=SURFACE)
+        style.configure("Card.TLabel", background=SURFACE, foreground=INK)
+        style.configure("Header.TFrame", background=PISTACHIO_GREEN)
+        style.configure("Title.TLabel", background=PISTACHIO_GREEN, foreground=INK, font=("Segoe UI", 24, "bold"))
+        style.configure("Subtitle.TLabel", background=PISTACHIO_GREEN, foreground=MUTED)
+        style.configure("Footer.TFrame", background=PISTACHIO_GREEN)
+        style.configure("Footer.TLabel", background=PISTACHIO_GREEN, foreground=INK)
         style.configure("TNotebook", background=BG, borderwidth=0)
-        style.configure("TNotebook.Tab", padding=(15, 10))
-        style.map("TNotebook.Tab", background=[("selected", "#ffffff")])
-        style.configure("TButton", padding=(12, 7))
-        header = ttk.Frame(self, padding=(24, 18))
+        style.configure("TNotebook.Tab", padding=(12, 12), background=SURFACE, foreground=INK,
+                        font=("Segoe UI", 11, "bold"))
+        style.map("TNotebook.Tab", background=[("selected", DARK_SOFT_VIOLET), ("active", CINNAMON_BUFF)],
+                  foreground=[("selected", LIGHT_TEXT), ("active", INK)])
+        style.configure("TButton", padding=(12, 10), background=CINNAMON_BUFF, foreground=INK,
+                        bordercolor=DARK_SOFT_VIOLET, lightcolor=CINNAMON_BUFF, darkcolor=DARK_SOFT_VIOLET)
+        style.map("TButton", background=[("pressed", PISTACHIO_GREEN), ("active", CINNAMON_BUFF)],
+                  foreground=[("pressed", INK), ("active", INK)])
+        style.configure("Primary.TButton", background=DARK_SOFT_VIOLET, foreground=LIGHT_TEXT,
+                        lightcolor=DARK_SOFT_VIOLET, darkcolor=DARK_SOFT_VIOLET, font=("Segoe UI", 12, "bold"))
+        style.map("Primary.TButton", background=[("pressed", PISTACHIO_GREEN), ("active", PISTACHIO_GREEN)],
+                  foreground=[("pressed", INK), ("active", INK)])
+        style.configure("Hex.TButton", background=CINNAMON_BUFF, foreground=INK, lightcolor=CINNAMON_BUFF,
+                        font=("Consolas", 12, "bold"))
+        style.map("Hex.TButton", background=[("pressed", PISTACHIO_GREEN), ("active", PISTACHIO_GREEN)])
+        for field in ("TEntry", "TSpinbox", "TCombobox"):
+            style.configure(field, fieldbackground=SURFACE, foreground=INK, bordercolor=PISTACHIO_GREEN,
+                            selectbackground=PISTACHIO_GREEN, selectforeground=INK, arrowcolor=INK)
+            style.map(field, bordercolor=[("focus", DARK_SOFT_VIOLET)],
+                      fieldbackground=[("readonly", SURFACE)], foreground=[("readonly", INK)])
+        style.configure("Vertical.TScrollbar", background=DARK_SOFT_VIOLET, troughcolor=PISTACHIO_GREEN,
+                        arrowcolor=LIGHT_TEXT, bordercolor=PISTACHIO_GREEN)
+        style.map("Vertical.TScrollbar", background=[("active", CINNAMON_BUFF)], arrowcolor=[("active", INK)])
+        self.option_add("*TCombobox*Listbox.background", SURFACE)
+        self.option_add("*TCombobox*Listbox.foreground", INK)
+        self.option_add("*TCombobox*Listbox.selectBackground", CINNAMON_BUFF)
+        self.option_add("*TCombobox*Listbox.selectForeground", INK)
+        header = ttk.Frame(self, padding=(24, 18), style="Header.TFrame")
         header.pack(fill="x")
-        ttk.Label(header, text="SANZO WADA", font=("Segoe UI", 24, "bold")).pack(side="left")
+        ttk.Label(header, text="SANZO WADA", style="Title.TLabel", font=("Segoe UI", 24, "bold")).pack(side="left")
         self.source = tk.StringVar(value="Nettoyé 1.3.0")
         choice = ttk.Combobox(header, textvariable=self.source,
                               values=["Nettoyé 1.3.0", "Brut amont"], state="readonly", width=20)
         choice.pack(side="right")
         choice.bind("<<ComboboxSelected>>", self.change_source)
-        ttk.Label(self, text="159 couleurs · 348 combinaisons · Tout fonctionne hors connexion",
-                  foreground=MUTED, padding=(24, 0, 24, 14)).pack(anchor="w")
+        subtitle = ttk.Frame(self, style="Header.TFrame")
+        subtitle.pack(fill="x")
+        ttk.Label(subtitle, text="159 couleurs · 348 combinaisons · Thème 127 · Hors connexion",
+                  style="Subtitle.TLabel", padding=(24, 0, 24, 14)).pack(anchor="w")
+        strip = tk.Frame(self, height=5, background=PISTACHIO_GREEN)
+        strip.pack(fill="x", pady=(0, 14))
+        for index, value in enumerate((CINNAMON_BUFF, PISTACHIO_GREEN, DARK_SOFT_VIOLET)):
+            strip.columnconfigure(index, weight=1, uniform="theme")
+            tk.Frame(strip, background=value, height=5).grid(row=0, column=index, sticky="ew")
         self.notebook = ttk.Notebook(self)
-        self.notebook.pack(fill="both", expand=True, padx=20)
         self.status = tk.StringVar(value="Prêt. Cliquez sur un code HEX pour le copier.")
-        bottom = ttk.Frame(self, padding=(24, 10))
-        bottom.pack(fill="x")
-        ttk.Button(bottom, text="Exporter le résultat JSON", command=self.export).pack(side="right")
-        ttk.Label(bottom, textvariable=self.status).pack(side="left")
-        ttk.Label(self, text=PROVENANCE, foreground=MUTED, wraplength=1100,
-                  padding=(24, 4, 24, 16)).pack(fill="x")
+        bottom = ttk.Frame(self, padding=(24, 10), style="Footer.TFrame")
+        bottom.pack(side="bottom", fill="x")
+        ttk.Button(bottom, text="Exporter le résultat JSON", command=self.export, style="Primary.TButton").pack(side="right")
+        ttk.Label(bottom, textvariable=self.status, style="Footer.TLabel").pack(side="left")
+        self.provenance_label = ttk.Label(self, text=PROVENANCE, foreground=MUTED, wraplength=1100,
+                                          padding=(24, 4, 24, 16), font=("Segoe UI", 11))
+        self.provenance_label.pack(side="bottom", fill="x", before=bottom)
+        self.bind("<Configure>", lambda event: self.provenance_label.configure(
+            wraplength=max(300, self.winfo_width() - 48)) if event.widget == self else None)
+        self.notebook.pack(fill="both", expand=True, padx=20)
         self.payload = {}
         self.gallery_page = 0
         self.load_data()
@@ -120,27 +170,27 @@ class Application(tk.Tk):
     def make_tabs(self):
         row, self.combo_view = self.make_tab("Combinaison")
         ttk.Label(row, text="Numéro de 1 à 348").pack(side="left", padx=(0, 10))
-        self.combo_number = tk.StringVar(value="198")
+        self.combo_number = tk.StringVar(value="127")
         entry = ttk.Spinbox(row, from_=1, to=348, textvariable=self.combo_number, width=8,
                             command=self.show_combo)
         entry.pack(side="left")
         entry.bind("<Return>", lambda e: self.show_combo())
-        ttk.Button(row, text="Afficher", command=self.show_combo).pack(side="left", padx=10)
+        ttk.Button(row, text="Afficher", command=self.show_combo, style="Primary.TButton").pack(side="left", padx=10)
 
         row, self.color_view = self.make_tab("Par couleur")
         ttk.Label(row, text="Nom ou fragment de nom").pack(side="left", padx=(0, 10))
         self.color_name = tk.StringVar(value="Burnt Sienna")
-        self.name_box = ttk.Combobox(row, textvariable=self.color_name, width=32)
+        self.name_box = ttk.Combobox(row, textvariable=self.color_name, width=26)
         self.name_box.pack(side="left")
         self.name_box.bind("<Return>", lambda e: self.show_color())
         self.name_box.bind("<<ComboboxSelected>>", lambda e: self.show_color())
-        ttk.Button(row, text="Rechercher", command=self.show_color).pack(side="left", padx=10)
+        ttk.Button(row, text="Rechercher", command=self.show_color, style="Primary.TButton").pack(side="left", padx=10)
 
         row, self.nearest_view = self.make_tab("Proximité HEX")
         self.hex_input = tk.StringVar(value="#00978d")
         ttk.Entry(row, textvariable=self.hex_input, width=15).pack(side="left")
         ttk.Button(row, text="Choisir une couleur", command=self.choose_color).pack(side="left", padx=8)
-        ttk.Button(row, text="Comparer", command=self.show_nearest).pack(side="left")
+        ttk.Button(row, text="Comparer", command=self.show_nearest, style="Primary.TButton").pack(side="left")
 
         row, self.suggest_view = self.make_tab("Suggestions")
         self.anchor = tk.StringVar(value="Burnt Sienna")
@@ -149,7 +199,7 @@ class Application(tk.Tk):
         self.suggest_size = tk.StringVar(value="Toutes")
         ttk.Combobox(row, values=["Toutes", "2", "3", "4"], textvariable=self.suggest_size,
                      state="readonly", width=8).pack(side="left", padx=8)
-        ttk.Button(row, text="Voir les accords", command=self.show_suggest).pack(side="left")
+        ttk.Button(row, text="Voir les accords", command=self.show_suggest, style="Primary.TButton").pack(side="left")
 
         row, self.gallery_view = self.make_tab("Les 348")
         self.gallery_size = tk.StringVar(value="Toutes")
@@ -168,15 +218,15 @@ class Application(tk.Tk):
         row, self.contrast_view = self.make_tab("Contraste")
         self.contrast_a = tk.StringVar(value="#000000")
         self.contrast_b = tk.StringVar(value="#ffffff")
-        ttk.Entry(row, textvariable=self.contrast_a, width=25).pack(side="left")
+        ttk.Entry(row, textvariable=self.contrast_a, width=20).pack(side="left")
         ttk.Label(row, text="avec").pack(side="left", padx=8)
-        ttk.Entry(row, textvariable=self.contrast_b, width=25).pack(side="left")
-        ttk.Button(row, text="Calculer", command=self.show_contrast).pack(side="left", padx=8)
+        ttk.Entry(row, textvariable=self.contrast_b, width=20).pack(side="left")
+        ttk.Button(row, text="Calculer", command=self.show_contrast, style="Primary.TButton").pack(side="left", padx=8)
 
     def note(self, parent, text, warning=False):
-        label = tk.Label(parent, text=text, justify="left", anchor="w", wraplength=1020,
-                         background="#fff1d6" if warning else BG, foreground="#674500" if warning else MUTED,
-                         padx=12, pady=12)
+        label = tk.Label(parent, text=("Attention : " + text) if warning else text, justify="left", anchor="w", wraplength=1020,
+                         background=CINNAMON_BUFF if warning else SURFACE, foreground=INK,
+                         font=("Segoe UI", 12), padx=14, pady=14)
         label.wrap_dynamic = True
         label.pack(fill="x", pady=5)
 
@@ -187,25 +237,32 @@ class Application(tk.Tk):
             self.note(parent, self.global_warning, True)
 
     def swatches(self, parent, colors):
-        row = ttk.Frame(parent)
+        row = ttk.Frame(parent, style="Card.TFrame", padding=6)
         row.pack(fill="x", pady=8)
         for i, color in enumerate(colors):
             row.columnconfigure(i, weight=1, uniform="swatch")
-            cell = ttk.Frame(row, padding=4)
+            cell = ttk.Frame(row, padding=6, style="Card.TFrame")
             cell.grid(row=0, column=i, sticky="nsew")
-            paint = tk.Frame(cell, background=color["hex"], height=115)
+            cell.bind("<Configure>", lambda event, frame=cell: [
+                child.configure(wraplength=max(90, event.width - 12))
+                for child in frame.winfo_children() if isinstance(child, ttk.Label)])
+            paint = tk.Frame(cell, background=color["hex"], height=115,
+                             highlightthickness=1, highlightbackground=INK)
             paint.pack(fill="x")
-            ttk.Label(cell, text=color["name"], font=("Segoe UI", 11, "bold")).pack(anchor="w", pady=(8, 3))
+            ttk.Label(cell, text=color["name"], font=("Segoe UI", 13, "bold"),
+                      style="Card.TLabel").pack(anchor="w", pady=(10, 5))
             if color.get("name_source"):
-                ttk.Label(cell, text="Source : " + color["name_source"], foreground=MUTED).pack(anchor="w")
-            ttk.Label(cell, text="CMYK : " + str(color.get("cmyk", "non fourni"))).pack(anchor="w")
-            ttk.Button(cell, text=color["hex"], command=lambda c=color: self.copy_hex(c["hex"])).pack(anchor="w", pady=5)
-            ttk.Label(cell, text="Approximation d'écran", foreground=MUTED).pack(anchor="w")
+                ttk.Label(cell, text="Source : " + color["name_source"], style="Card.TLabel").pack(anchor="w")
+            ttk.Label(cell, text="CMYK : " + str(color.get("cmyk", "non fourni")), style="Card.TLabel").pack(anchor="w", pady=3)
+            ttk.Button(cell, text=color["hex"], command=lambda c=color: self.copy_hex(c["hex"]),
+                       style="Hex.TButton").pack(anchor="w", pady=5)
+            ttk.Label(cell, text="Approximation d'écran", style="Card.TLabel").pack(anchor="w", pady=4)
 
     def card(self, parent, cid):
-        box = ttk.Frame(parent, padding=12, relief="solid", borderwidth=1)
+        box = ttk.Frame(parent, padding=16, relief="solid", borderwidth=1, style="Card.TFrame")
         box.pack(fill="x", pady=8)
-        ttk.Label(box, text="Combinaison n° %d" % cid, font=("Segoe UI", 14, "bold")).pack(anchor="w")
+        ttk.Label(box, text="Combinaison n° %d" % cid, font=("Segoe UI", 16, "bold"),
+                  style="Card.TLabel").pack(anchor="w", pady=(0, 4))
         colors = [self.colors[i] for i in self.combos[cid]]
         self.swatches(box, colors)
         self.warnings(box, colors)

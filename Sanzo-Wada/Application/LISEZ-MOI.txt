@@ -19,3 +19,9 @@ L'exécutable n'est pas signé : Windows SmartScreen peut demander une confirmat
 Sources : application.py (interface), demarrer.pyw (entrée Python), Lanceur.cs (source du lanceur EXE). Le lanceur est compilé avec le compilateur .NET Framework déjà présent sur Windows.
 
 HEX : approximation d'écran. CMYK transcrit d'après le livre, non vérifié contre le papier. Aucun nuancier commercial. Les accords ne portent aucun classement de pertinence ou usage attribué à Wada.
+
+INTERFACE COMBINAISON 127
+Pistachio Green dominant : fond, en-tête, panneaux et pied. Cinnamon Buff et Dark Soft Violet en accents et commandes. Texte sombre sur le vert et le Cinnamon, texte blanc sur le violet pour la lisibilité. Répartition choisie pour cette interface, pas prescrite par Wada. La combinaison 127 est affichée au démarrage. Les aplats de données restent fidèles aux valeurs source, avec un contour pour les distinguer du fond.
+
+LISIBILITÉ
+Textes courants en 12 points, noms en 13 points et titres de cartes en 16 points. Cartes et champs sur fond clair pour faciliter la lecture. Pistachio Green conservé autour des zones de lecture. Les textes longs se replient et les résultats défilent dans les petites fenêtres.

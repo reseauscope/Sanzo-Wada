@@ -19,5 +19,43 @@
   },
   "network_used": false,
   "python_required": "Python local avec Tkinter, chemin dans python-local.txt",
-  "standalone_python_embedded": false
+  "standalone_python_embedded": false,
+  "interface_theme": {
+    "combination": 127,
+    "dominant": "Pistachio Green",
+    "roles": {
+      "Pistachio Green": "fond, en-tête, panneaux, onglets secondaires et pied",
+      "Cinnamon Buff": "boutons HEX, avertissements et survol",
+      "Dark Soft Violet": "actions, onglet actif et défilement"
+    },
+    "auxiliary_text": "#0b1518",
+    "text_on_violet": "#ffffff",
+    "surface": "#648f7b",
+    "roles_chosen_by": "choix utilisateur et conception interface, aucune attribution à Wada",
+    "six_tabs_checked": "OK",
+    "sizes_checked": [
+      "1180x820",
+      "820x600"
+    ],
+    "text_contrast_ratios": [
+      5.074,
+      11.866,
+      5.538
+    ]
+  },
+  "readability": {
+    "body_font_pt": 12,
+    "color_name_font_pt": 13,
+    "heading_font_pt": 16,
+    "reading_surface": "#fffdf7",
+    "reading_text": "#0b1518",
+    "contrast_reading_surface": 18.19,
+    "pistachio_preserved": "en-tête, fond extérieur, panneaux de commande et pied",
+    "six_tabs": "OK",
+    "sizes_checked": [
+      "1180x820",
+      "820x600"
+    ],
+    "visual_inspection": "cartes et champs clairs, textes agrandis, défilement disponible"
+  }
 }
